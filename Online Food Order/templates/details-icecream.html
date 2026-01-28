@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream Menu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/icecream.css') }}">
+</head>
+<body>
+  <header>
+    <h1>🍦 Ice Cream Menu</h1>
+  </header>
+
+  <section class="menu-options">
+    <div class="card">
+      <h2>Flavors</h2>
+      <p>Classic and premium ice cream flavors.</p>
+      <a href="{{ url_for('icecream_flavors') }}" class="btn">View Flavors</a>
+    </div>
+
+    <div class="card">
+      <h2>Sundaes</h2>
+      <p>Rich sundaes with fruits, chocolate, and toppings.</p>
+      <a href="{{ url_for('icecream_sundae') }}" class="btn">View Sundaes</a>
+    </div>
+
+    <div class="card">
+      <h2>Family Packs</h2>
+      <p>Large packs for family and party celebrations.</p>
+      <a href="{{ url_for('icecream_family') }}" class="btn">View Family Packs</a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="{{ url_for('home') }}" class="btn back">⬅ Back to Home</a>
+  </footer>
+</body>
+</html>

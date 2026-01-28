@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-Veg Pastas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍗 Non-Veg Pastas</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Chicken-Alfredo-Pasta" data-price="349">
+    <img src="https://snackescape.com/wp-content/uploads/2025/01/ahmedjday6822_Grilled_Chicken_Alfredo_Pasta_Amateur_photo_from__42ea3444-7239-4cd1-a1e1-17cf1359e131.png">
+    <h2>Chicken Alfredo Pasta</h2>
+    <p>Grilled chicken, creamy sauce</p>
+    <p>₹349</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Seafood-Pasta" data-price="399">
+    <img src="https://featuredish.com/wp-content/uploads/2012/08/Garlic-Shrimp-Pasta-with-Tomatoes.jpg">
+    <h2>Seafood Pasta</h2>
+    <p>Prawns, garlic, tomato base</p>
+    <p>₹399</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

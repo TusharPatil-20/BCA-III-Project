@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veg Pastas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🥦 Veg Pastas</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="White-Sauce-Pasta" data-price="249">
+    <img src="https://www.barefootfarmbyron.com/wp-content/uploads/2023/09/delicious-cheesy-white-sauce-pasta-recipe-a-creamy-delight-768x1024.jpg">
+    <h2>White Sauce Pasta</h2>
+    <p>Creamy sauce, vegetables & herbs</p>
+    <p>₹249</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Red-Sauce-Pasta" data-price="229">
+    <img src="https://cookwithmaya.com/wp-content/uploads/2025/07/red-sauce-pasta-recipe-1.webp">
+    <h2>Red Sauce Pasta</h2>
+    <p>Tomato base, garlic & spices</p>
+    <p>₹229</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

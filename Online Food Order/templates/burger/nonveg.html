@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-Veg Burgers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header>
+  <h1>🍗 Non-Veg Burgers</h1>
+</header>
+
+<section class="menu-list">
+
+  <!-- ITEM 1 -->
+  <div class="item" data-product="Chicken-Burger" data-price="249">
+    <img src="https://trentapizza.co.uk/wp-content/uploads/2016/07/Buffalo-Chicken-Burger.jpg" alt="Chicken Burger">
+    <h2>Chicken Burger</h2>
+    <p>₹249</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this, -1)">−</button>
+      <input type="text" class="qty" value="1" readonly>
+      <button onclick="changeQty(this, 1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <!-- ITEM 2 -->
+  <div class="item" data-product="Double-Chicken-Burger" data-price="349">
+    <img src="https://thumbs.dreamstime.com/b/chicken-burger-delicious-double-burger-crispy-chicken-meat-salad-sauce-isolated-chicken-burger-delicious-double-burger-310469805.jpg" alt="Double Chicken Burger">
+    <h2>Double Chicken Burger</h2>
+    <p>₹349</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this, -1)">−</button>
+      <input type="text" class="qty" value="1" readonly>
+      <button onclick="changeQty(this, 1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<!-- ✅ MAIN SCRIPT -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

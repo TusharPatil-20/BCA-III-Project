@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burger Combos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍔 Burger Combos</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Burger-Fries-Coke" data-price="399">
+    <img src="https://cheekyburger.weebly.com/uploads/5/1/2/1/51218051/s777933512805876197_p1_i1_w2560.jpeg">
+    <h2>Burger + Fries + Coke</h2>
+    <p>₹399</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Double-Feast" data-price="699">
+    <img src="https://staticg.sportskeeda.com/editor/2022/11/03667-16688163437652-1920.jpg">
+    <h2>Double Feast</h2>
+    <p>₹699</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

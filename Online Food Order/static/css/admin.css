@@ -1,0 +1,271 @@
+/* 🌸🍕 Admin Panel Clean & Food-Themed Look */
+:root{
+  --accent1: #ff4d4d;
+  --accent2: #ff8c42;
+  --accent-orange: #ff9800;
+  --muted-bg: #fff8f5;
+  --text: #222;
+  --radius: 20px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffe6eb, #fff6f0);
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+
+/* 🔝 HEADER */
+header {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  padding: 22px 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 🧩 MAIN SECTION */
+.admin-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* 🔙 Undo Button */
+.undo-btn {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, var(--accent-orange), #ffcc80);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.undo-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, #f57c00, #ffa726);
+  transform: translateY(-3px);
+}
+
+.undo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------- TABLE WRAPPER --------- */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  padding: 6px;
+  background: #ffffffa0;
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 880px;
+}
+
+/* TABLE HEADER */
+thead {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #fff;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 15px;
+}
+
+th {
+  font-weight: 700;
+}
+
+/* ROW COLORS */
+tbody tr:nth-child(even) {
+  background: var(--muted-bg);
+}
+
+tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+tbody tr:hover {
+  background: #ffe0e0;
+  transition: 0.25s;
+  transform: translateY(-2px);
+}
+
+/* ⭐ STATUS BADGES */
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status-paid {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.status-cod {
+  background: #ffe0b2;
+  color: #e65100;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+button.action {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.22s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  background: linear-gradient(45deg, #42a5f5, #64b5f6);
+  color: #fff;
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(45deg, #1e88e5, #42a5f5);
+  transform: translateY(-3px);
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: linear-gradient(45deg, #f44336, #ef5350);
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(45deg, #d32f2f, #f44336);
+  transform: translateY(-3px);
+}
+
+/* 🔗 LINKS */
+a.phone-link,
+a.customer-link {
+  color: #2b6cb0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.phone-link:hover {
+  color: #1f6fb5;
+  text-decoration: underline;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 900px) {
+  header {
+    font-size: 26px;
+  }
+
+  .admin-section {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  table {
+    min-width: 700px;
+  }
+}
+/* ===============================
+   🧭 ADMIN HEADER NAV (HOME + LOGOUT)
+================================ */
+
+header {
+  position: relative; /* important for nav positioning */
+}
+
+/* Right side buttons container */
+.admin-nav {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+/* 🏠 Home Button */
+.admin-home-btn {
+  background: #ffffff;
+  color: var(--accent1);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
+}
+
+.admin-home-btn:hover {
+  background: #fff1ec;
+  color: var(--accent2);
+  transform: translateY(-2px);
+}
+
+/* 🚪 Logout Button */
+.admin-logout-btn {
+  background: linear-gradient(45deg, #ff3d3d, #ff6b6b);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  transition: 0.25s ease;
+}
+
+.admin-logout-btn:hover {
+  background: linear-gradient(45deg, #d32f2f, #ff5252);
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive: stack buttons on small screens */
+@media (max-width: 700px) {
+  .admin-nav {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 14px;
+  }
+}
+ 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🍔 Food Booking System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+
+  <!-- Left empty spacer -->
+  <div class="logo-left"></div>
+
+  <!-- Center Title -->
+  <h1 class="site-title">🍔 Food Booking System</h1>
+
+  <!-- Right Navigation -->
+  <nav class="nav-right">
+    <a href="{{ url_for('home') }}">Home</a>
+
+    {% if session.get("user") %}
+      <a href="{{ url_for('user_logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('user_login') }}">Login</a>
+    {% endif %}
+
+    <a href="{{ url_for('contact') }}">Contact Us</a>
+    <a href="{{ url_for('admin_login') }}">Admin</a>
+  </nav>
+
+</header>
+
+<!-- ================= MENU SECTION ================= -->
+<section class="menu">
+  <h2>Available Foods</h2>
+
+  <div class="food-items">
+
+    <!-- Pizza -->
+    <div class="food-card">
+      <img src="https://cdn.pixabay.com/photo/2024/04/18/10/41/ai-generated-8704060_1280.jpg" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>Starts at ₹299</p>
+      <a href="{{ url_for('details_pizza') }}">
+        <button>View Details</button>
+      </a>
+    </div>
+
+    <!-- Burger -->
+    <div class="food-card">
+      <img src="https://cdn.pixabay.com/photo/2023/03/05/11/02/burger-7831128_1280.jpg" alt="Burger">
+      <h3>Burger</h3>
+      <p>Starts at ₹149</p>
+      <a href="{{ url_for('details_burger') }}">
+        <button>View Details</button>
+      </a>
+    </div>
+
+    <!-- Pasta -->
+    <div class="food-card">
+      <img src="https://cdn.pixabay.com/photo/2022/09/24/07/31/pasta-7475756_1280.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>Starts at ₹199</p>
+      <a href="{{ url_for('details_pasta') }}">
+        <button>View Details</button>
+      </a>
+    </div>
+
+    <!-- Ice Cream -->
+    <div class="food-card">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/026/781/289/small_2x/various-of-ice-cream-flavor-whit-fresh-blueberry-strawberry-kiwi-lemon-vanilla-setup-on-rustic-background-photo.jpg" alt="Ice Cream">
+      <h3>Ice Cream</h3>
+      <p>Starts at ₹99</p>
+      <a href="{{ url_for('details_icecream') }}">
+        <button>View Details</button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

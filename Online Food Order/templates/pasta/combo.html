@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pasta Combos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍝 Pasta Combos</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Pasta-Garlic-Bread" data-price="449">
+    <img src="https://uploads-ssl.webflow.com/5ff2f2d2b2cd4e2c440d2c2a/61126977829de07d04e6d1fa_1E71BFB0-E09A-482C-99D5-07E6A6F016FD.jpeg">
+    <h2>Pasta + Garlic Bread</h2>
+    <p>Any Pasta + Garlic Bread</p>
+    <p>₹449</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Pasta-Pizza" data-price="799">
+    <img src="https://img.freepik.com/premium-photo/topdown-view-pizza-pasta-combo-meal_85952-14699.jpg">
+    <h2>Pasta + Pizza</h2>
+    <p>Any Pasta + 1 Medium Pizza</p>
+    <p>₹799</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

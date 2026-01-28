@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Menu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/burger.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>🍔 Burger Menu</h1>
+  </header>
+
+  <section class="menu-options">
+    <div class="card">
+      <h2>Veg Burgers</h2>
+      <p>Healthy, tasty, and loaded with veggie patties.</p>
+      <a href="{{ url_for('burger_veg') }}" class="btn">View Veg Burgers</a>
+    </div>
+
+    <div class="card">
+      <h2>Non-Veg Burgers</h2>
+      <p>Juicy chicken and meat patties with cheese.</p>
+      <a href="{{ url_for('burger_nonveg') }}" class="btn">View Non-Veg Burgers</a>
+    </div>
+
+    <div class="card">
+      <h2>Burger Combos</h2>
+      <p>Burgers with fries, drinks, and special deals.</p>
+      <a href="{{ url_for('burger_combo') }}" class="btn">View Burger Combos</a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="{{ url_for('home') }}" class="btn back">⬅ Back to Home</a>
+  </footer>
+</body>
+
+</html>

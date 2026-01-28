@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📦 Admin Orders</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/orders.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+  📦 Admin Orders Panel
+</header>
+
+<nav>
+  <a href="{{ url_for('home') }}">🏠 Home</a>
+  <a href="{{ url_for('admin_logout') }}" class="logout">Logout</a>
+</nav>
+
+<div class="container">
+  <h2>📊 All Orders</h2>
+
+  <button onclick="clearOrders()" class="clear-btn">
+    🧹 Clear All Orders
+  </button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Customer</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for o in orders %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ o[4] }}</td>
+        <td>₹{{ o[5] }}</td>
+        <td>{{ o[6] }}</td>
+        <td>₹{{ o[7] }}</td>
+        <td>{{ o[1] }}</td>
+        <td>{{ o[3] }}</td>
+        <td>{{ o[2] }}</td>
+        <td>{{ o[8] }}</td>
+        <td>{{ o[9] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+async function clearOrders(){
+  if(!confirm("Are you sure you want to delete all orders?")) return;
+
+  const res = await fetch("/api/orders/clear",{method:"DELETE"});
+  const data = await res.json();
+  alert("All orders cleared");
+  location.reload();
+}
+</script>
+
+</body>
+</html>

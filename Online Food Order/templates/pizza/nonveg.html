@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-Veg Pizzas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍗 Non-Veg Pizzas</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Chicken-Tikka-Pizza" data-price="449">
+    <img src="https://img.freepik.com/premium-photo/closeup-delicious-chicken-tikka-pizza-with-red-onions-cilantro-melted-cheese_107062-30355.jpg">
+    <h2>Chicken Tikka Pizza</h2>
+    <p>Spicy chicken, onions, cheese</p>
+    <p>₹449</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Pepperoni-Pizza" data-price="499">
+    <img src="https://insanelygoodrecipes.com/wp-content/uploads/2022/04/Homemade-Pizza-with-Pepperoni-and-Cheese.jpg">
+    <h2>Pepperoni Pizza</h2>
+    <p>Pepperoni slices & cheese</p>
+    <p>₹499</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

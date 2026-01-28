@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Confirmation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/confirm.css') }}">
+</head>
+<body>
+  <header>
+    <h1>✅ Order Confirmed</h1>
+    <nav>
+      <a href="{{ url_for('home') }}" class="btn back">⬅ Back to Home</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Your order has been placed successfully!</h2>
+    <p>Payment Mode: <b>Cash on Delivery</b></p>
+    <p>Thank you for booking your food. 🍴</p>
+  </section>
+</body>
+</html>

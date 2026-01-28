@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Success</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/success.css') }}">
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-box">
+      <div class="icon">✅</div>
+      <h1>🎉 Order Placed Successfully!</h1>
+      <p>Thank you <strong>{{ customer }}</strong> for ordering <strong>{{ product }}</strong>.</p>
+      <p>Total Amount: <strong>₹{{ price }}</strong></p>
+      <a href="/" class="btn">🏠 Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

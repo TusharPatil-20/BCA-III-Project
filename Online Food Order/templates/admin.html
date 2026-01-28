@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📦 Admin Panel</title>
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="admin-header">
+    <h1>📦 Admin Panel</h1>
+
+    <div class="admin-nav">
+      <a href="{{ url_for('home') }}" class="admin-home-btn">🏠 Home</a>
+      <a href="{{ url_for('admin_logout') }}" class="admin-logout-btn">Logout</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN SECTION ================= -->
+  <section class="admin-section">
+
+    <!-- Orders Table -->
+    <div class="table-wrapper">
+      <table id="adminOrders">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Payment Status</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Rows injected by admin.js -->
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- ================= ADMIN JS ================= -->
+  <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+</body>
+</html>

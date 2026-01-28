@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veg Pizzas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🥦 Veg Pizzas</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Margherita-Pizza" data-price="299">
+    <img src="https://sodelicious.recipes/wp-content/uploads/2018/03/28-08-2017-R4-chefs-var3-Pizza-Margherita.jpg">
+    <h2>Margherita</h2>
+    <p>Classic cheese & tomato</p>
+    <p>₹299</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Veggie-Supreme-Pizza" data-price="399">
+    <img src="https://www.killingthyme.net/wp-content/uploads/2020/08/veggie-deluxe-pizza-768x512.jpg">
+    <h2>Veggie Supreme</h2>
+    <p>Onions, capsicum, olives</p>
+    <p>₹399</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

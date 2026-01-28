@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins','Segoe UI',sans-serif;
+}
+
+/* ================= BACKGROUND (VISIBLE + PREMIUM) ================= */
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+
+  background:
+    radial-gradient(circle at 10% 20%, #ffe8d6 0%, transparent 42%),
+    radial-gradient(circle at 90% 80%, #fde2e4 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35), transparent 60%),
+    linear-gradient(135deg, #fff3e8, #fff7f2);
+}
+
+/* ================= HEADER ================= */
+header{
+  padding:18px;
+  text-align:center;
+  font-size:26px;
+  font-weight:700;
+  color:white;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#ff6a00,#ee0979);
+  box-shadow:0 8px 22px rgba(0,0,0,0.35);
+}
+
+/* ================= CENTER ================= */
+.wrapper{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* ================= CARD ================= */
+.card{
+  width:520px;
+  padding:60px 58px;
+  border-radius:32px;
+
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,0.96),
+    rgba(255,255,255,0.9)
+  );
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.22),
+    inset 0 0 0 1px rgba(255,255,255,0.7);
+
+  text-align:center;
+}
+
+/* ================= TEXT ================= */
+.card h2{
+  font-size:30px;
+  margin-bottom:12px;
+  color:#1f2937;
+}
+
+.card p{
+  font-size:15px;
+  margin-bottom:38px;
+  color:#4b5563;
+}
+
+/* ================= INPUT ================= */
+.input-box{
+  position:relative;
+  margin-bottom:34px;
+}
+
+.input-box span{
+  position:absolute;
+  top:-12px;
+  left:24px;
+  background:#ff6a00;
+  color:white;
+  font-size:12px;
+  padding:4px 14px;
+  border-radius:14px;
+}
+
+.input-box input{
+  width:100%;
+  padding:20px 26px;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  font-size:16px;
+  background:#f9fafb;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.18),
+    inset 0 1px 3px rgba(255,255,255,0.9);
+}
+
+/* ================= BUTTON ================= */
+button{
+  width:100%;
+  padding:16px;
+  border-radius:42px;
+  border:none;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  color:white;
+
+  background:linear-gradient(135deg,#ff6a00,#ff944d);
+  box-shadow:0 16px 36px rgba(255,106,0,0.45);
+
+  transition:0.3s ease;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 24px 50px rgba(255,106,0,0.6);
+}
+
+/* ================= ERROR ================= */
+.error{
+  margin-top:22px;
+  font-size:14px;
+  font-weight:600;
+  color:#b91c1c;
+  background:#fee2e2;
+  padding:12px 18px;
+  border-radius:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🍔 Food Booking System</header>
+
+<div class="wrapper">
+  <div class="card">
+    <h2>🔐 Login Required</h2>
+    <p>Please log in before placing your order</p>
+
+    <form method="POST">
+      <div class="input-box">
+        <span>Mobile Number</span>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Enter 10-digit mobile number"
+          required
+          autofocus
+        >
+      </div>
+
+      <button type="submit">Continue</button>
+    </form>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+  </div>
+</div>
+
+</body>
+</html>

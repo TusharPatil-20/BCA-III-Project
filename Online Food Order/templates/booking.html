@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Booking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>📦 My Food Booking</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('booking') }}">My Booking</a>
+    </nav>
+  </header>
+
+  <section class="booking-list">
+    <h2>📋 Booked Foods</h2>
+    <ul id="bookingItems">
+      <li>Loading your bookings...</li>
+    </ul>
+    <button onclick="clearBooking()">Clear Booking</button>
+  </section>
+
+  <script>
+    // 📡 Fetch orders from backend
+    async function loadBookings() {
+      try {
+        const res = await fetch("/api/orders");
+        const data = await res.json();
+        const list = document.getElementById("bookingItems");
+        list.innerHTML = "";
+
+        if (data.length === 0) {
+          list.innerHTML = "<li>No bookings found.</li>";
+          return;
+        }
+
+        data.forEach(order => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${order.product}</strong> - ₹${order.price}<br>
+            👤 ${order.customer_name} | 📞 ${order.phone}<br>
+            📍 ${order.address} <br>
+            🕒 ${order.created_at}
+          `;
+          list.appendChild(li);
+        });
+      } catch (err) {
+        document.getElementById("bookingItems").innerHTML = "<li>Error loading bookings.</li>";
+        console.error(err);
+      }
+    }
+
+    // 🗑️ Clear all orders (optional)
+    async function clearBooking() {
+      if (confirm("Are you sure you want to delete all bookings?")) {
+        await fetch("/api/orders/clear", { method: "DELETE" });
+        loadBookings();
+      }
+    }
+
+    loadBookings();
+  </script>
+</body>
+</html>

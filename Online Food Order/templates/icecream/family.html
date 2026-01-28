@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Packs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍧 Family Packs</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Family-Pack-1L" data-price="499">
+    <img src="https://www.souqalbuhair.com/wp-content/uploads/2023/09/8901262175135.webp">
+    <h2>1 Litre Family Pack</h2>
+    <p>Any flavor, serves 4–5 people</p>
+    <p>₹499</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Family-Pack-2L" data-price="899">
+    <img src="https://cdn.grofers.com/app/assets/products/sliding_images/jpeg/55fbe380-adc0-4298-954a-fc87bccc81d2.jpg">
+    <h2>2 Litre Party Pack</h2>
+    <p>Perfect for gatherings & parties</p>
+    <p>₹899</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

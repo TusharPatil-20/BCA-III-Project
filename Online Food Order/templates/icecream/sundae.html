@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sundaes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍨 Sundaes</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Chocolate-Sundae" data-price="199">
+    <img src="https://thumbs.dreamstime.com/b/chocolate-ice-cream-sundae-syrup-rainbow-sprinkles-139314260.jpg">
+    <h2>Chocolate Sundae</h2>
+    <p>Chocolate syrup topped ice cream</p>
+    <p>₹199</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Fruit-Sundae" data-price="249">
+    <img src="https://img.freepik.com/premium-photo/ice-cream-glass-bowl_1059430-50555.jpg">
+    <h2>Fruit Sundae</h2>
+    <p>Ice cream topped with fresh fruits</p>
+    <p>₹249</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

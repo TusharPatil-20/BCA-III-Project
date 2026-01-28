@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza Combos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍕 Pizza Combos</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Pizza-Burger-Combo" data-price="699">
+    <img src="https://latenightpizzabar.com/wp-content/uploads/2022/09/all-foods.png">
+    <h2>Pizza + Burger Combo</h2>
+    <p>1 Medium Pizza + 1 Burger + Coke</p>
+    <p>₹699</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Family-Feast-Pizza" data-price="1199">
+    <img src="https://5.imimg.com/data5/VE/GG/MY-53040683/combo-for-family-28just-499-2f-29.jpg">
+    <h2>Family Feast</h2>
+    <p>2 Large Pizzas + 4 Garlic Bread</p>
+    <p>₹1199</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

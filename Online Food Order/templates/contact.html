@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📞 Contact Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+<body>
+
+<header class="contact-header">
+  📞 Contact Us
+</header>
+
+<div class="contact-container">
+  <h2 class="main-title">Get in Touch</h2>
+
+  <!-- Person 1 -->
+  <div class="person-card horizontal">
+    <img src="{{ url_for('static', filename='images/tushar.jpg') }}" class="profile-img">
+
+    <div class="person-info">
+      <h3>👤 Tushar Patil</h3>
+      <p><strong>📍 Address:</strong> Sangli, Maharashtra</p>
+      <p><strong>📞 Phone:</strong> +91 7559198607</p>
+      <p><strong>📧 Email:</strong> tushpatil1510@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Person 2 -->
+  <div class="person-card horizontal">
+    <img src="{{ url_for('static', filename='images/rohan.jpg') }}" class="profile-img">
+
+    <div class="person-info">
+      <h3>👤 Rohan Chavan</h3>
+      <p><strong>📍 Address:</strong> Sangli, Maharashtra</p>
+      <p><strong>📞 Phone:</strong> +91 9665885942</p>
+      <p><strong>📧 Email:</strong> rohanchavan5604@gmail.com</p>
+    </div>
+  </div>
+
+  <a href="{{ url_for('home') }}" class="back-btn">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>

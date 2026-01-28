@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>❌ Validation Error</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-card">
+      <div class="icon">❌</div>
+      <h1>Validation Error</h1>
+      <p>{{ message }}</p>
+
+      <div class="tips">
+        💡 Tip: Phone numbers must contain exactly <strong>10 digits</strong> (0–9).
+      </div>
+
+      <div class="buttons">
+        <a href="{{ url_for('payment') }}" class="btn primary">🔙 Go back to Payment</a>
+        <a href="{{ url_for('home') }}" class="btn secondary">🏠 Back to Home</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

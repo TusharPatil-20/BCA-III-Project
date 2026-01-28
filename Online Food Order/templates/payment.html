@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💳 Payment Page</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>💰 Cash on Delivery</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">🏠 Home</a>
+    </nav>
+  </header>
+
+  <!-- ================= PAYMENT BOX ================= -->
+  <section class="payment-box">
+
+    <h2 id="productName">
+      Order: {{ last_order.product if last_order else 'No product selected' }}
+    </h2>
+
+    <p id="productPrice">
+      Price: ₹{{ last_order.price if last_order else '0' }}
+    </p>
+
+    <p id="productQty" style="font-weight:600;color:#ff6b35;">
+      Qty: {{ last_order.qty if last_order else 1 }}
+    </p>
+
+    <!-- ================= FORM ================= -->
+    <form id="paymentForm" action="/save-order" method="POST">
+
+      <input
+        type="text"
+        name="customer_name"
+        placeholder="Full Name"
+        value="{{ last_order.customer_name if last_order else '' }}"
+        required
+      >
+
+      <input
+        type="text"
+        name="phone"
+        placeholder="10-digit Mobile Number"
+        value="{{ last_order.phone if last_order else '' }}"
+        required
+      >
+
+      <input
+        type="text"
+        name="address"
+        placeholder="Full Address"
+        value="{{ last_order.address if last_order else '' }}"
+        required
+      >
+
+      <!-- 🔴 HIDDEN FIELDS -->
+      <input type="hidden" name="product" id="productInput">
+      <input type="hidden" name="price" id="priceInput">
+      <input type="hidden" name="qty" id="qtyInput">
+
+      <!-- 🚚 ORDER BUTTON -->
+      <button type="submit" class="order-btn" id="orderBtn">
+        <span class="label">✅ Place Order</span>
+        <span class="truck">🚚</span>
+      </button>
+
+    </form>
+  </section>
+
+  <!-- ================= JS ================= -->
+  <script>
+    // ===============================
+    // GET URL PARAMS
+    // ===============================
+    const params = new URLSearchParams(window.location.search);
+
+    const productParam = params.get("product");
+    const priceParam = params.get("price");
+    const qtyParam = params.get("qty") || 1;
+
+    if (productParam && priceParam) {
+      document.getElementById("productName").textContent =
+        `Order: ${productParam}`;
+      document.getElementById("productPrice").textContent =
+        `Price: ₹${priceParam}`;
+      document.getElementById("productQty").textContent =
+        `Qty: ${qtyParam}`;
+
+      document.getElementById("productInput").value = productParam;
+      document.getElementById("priceInput").value = priceParam;
+      document.getElementById("qtyInput").value = qtyParam;
+    }
+
+    // ===============================
+    // TRUCK ANIMATION (SAFE)
+    // ===============================
+    const form = document.getElementById("paymentForm");
+    const btn = document.getElementById("orderBtn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const product = document.getElementById("productInput").value;
+      const price = document.getElementById("priceInput").value;
+      const qty = document.getElementById("qtyInput").value;
+
+      // ❌ SAFETY CHECK
+      if (!product || !price || !qty) {
+        alert("⚠️ Please login and select product properly");
+        return;
+      }
+
+      // ✅ START TRUCK
+      btn.classList.add("active");
+
+      // ⏳ DELAY SUBMIT
+      setTimeout(() => {
+        form.submit();
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>

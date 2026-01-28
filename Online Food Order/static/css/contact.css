@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Page Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+}
+
+/* Header */
+.contact-header {
+  width: 100%;
+  padding: 22px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Container */
+.contact-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 30px;
+  color: #dd2476;
+  margin-bottom: 40px;
+}
+
+/* Person Card */
+.person-card.horizontal {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background: white;
+  padding: 30px 40px;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+  transition: 0.3s ease;
+}
+
+.person-card.horizontal:hover {
+  transform: translateY(-6px);
+}
+
+.profile-img {
+  width: 185px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(0.92);   /* ⬅️ zoom out */
+  border: 5px solid #dd2476;
+}
+
+/* Right Info */
+.person-info {
+  text-align: left;
+}
+
+.person-info h3 {
+  font-size: 24px;
+  color: #ff512f;
+  margin-bottom: 14px;
+}
+
+.person-info p {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #333;
+}
+
+.person-info strong {
+  color: #dd2476;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 45px;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  box-shadow: 0 10px 22px rgba(221,36,118,0.45);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .person-card.horizontal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .person-info {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+}

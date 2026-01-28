@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veg Burgers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🥬 Veg Burgers</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Aloo-Tikki-Burger" data-price="149">
+    <img src="https://www.spiceupthecurry.com/wp-content/uploads/2014/07/aloo-tikki-burger-recipe-9.jpg">
+    <h2>Aloo Tikki Burger</h2>
+    <p>₹149</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Veggie-Delight-Burger" data-price="199">
+    <img src="https://cakesncakesshop.com/uploads/product/images/file-6607c15b3038c-1711784283.webp">
+    <h2>Veggie Delight</h2>
+    <p>₹199</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

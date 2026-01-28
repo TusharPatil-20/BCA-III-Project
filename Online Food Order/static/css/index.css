@@ -1,0 +1,256 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+  background: linear-gradient(135deg, #ff512f, #ff8c00);
+  padding: 56px 66px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 24px 24px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-left {
+  height: 1px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  justify-self: center;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  padding: 6px 2px;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.nav-right a:hover {
+  color: #fff3c4;
+}
+
+/* ================= MENU ================= */
+.menu {
+  padding: 45px;
+}
+
+.menu h2 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.menu h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff512f, #ff8c00);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 5px;
+}
+
+/* ================= GRID ================= */
+.food-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+/* ================= FOOD CARD ================= */
+.food-card {
+  background: #eadbd6;
+  padding: 22px;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transition: all 0.35s ease;
+  position: relative;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* 🔥 HEIGHT INCREASED */
+  min-height: 440px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.food-card:hover {
+  transform: translateY(-8px) scale(1.035);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 107, 53, 0.4);
+}
+
+/* Food Image */
+.food-card img {
+  width: 100%;
+  height: 210px; /* 🔥 increased */
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Food Title */
+.food-card h3 {
+  margin: 18px 0 6px;
+  font-size: 1.35rem;
+  color: #333;
+}
+
+/* Food Price */
+.food-card p {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* ================= BUTTON ================= */
+.food-card button {
+  background: linear-gradient(135deg, #ff512f, #ff8c00);
+  color: #fff;
+  border: none;
+  padding: 13px 30px;
+  margin-top: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 18px rgba(255, 122, 24, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.food-card button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.food-card button:hover::after {
+  left: 120%;
+}
+
+.food-card button:hover {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .main-header {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: 1.9rem;
+  }
+
+  .nav-right {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .menu {
+    padding: 25px;
+  }
+
+  .menu h2 {
+    font-size: 1.6rem;
+  }
+
+  .food-card {
+    min-height: auto;
+  }
+
+  .food-card button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}

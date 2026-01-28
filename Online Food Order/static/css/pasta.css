@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("https://plm-wordpress-preprod.s3.us-east-2.amazonaws.com/wp-content/uploads/devlopment/2023/09/06103151/Types-of-pasta.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+}
+
+/* Add overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  /* light overlay */
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+header {
+  background: rgba(76, 175, 80, 0.9);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  padding: 60px;
+  width: 320px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.card h2 {
+  color: #4caf50;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #2e7d32, #1b5e20);
+}
+
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  color: #333;
+}

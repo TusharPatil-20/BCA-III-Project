@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ice Cream Flavors</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/varieties.css') }}">
+</head>
+<body>
+
+<header><h1>🍦 Ice Cream Flavors</h1></header>
+
+<section class="menu-list">
+
+  <div class="item" data-product="Vanilla-IceCream" data-price="99">
+    <img src="https://d1e3z2jco40k3v.cloudfront.net/-/media/project/oneweb/clubhouseca/recipes/classic_vanilla_icecream_800.jpg">
+    <h2>Vanilla</h2>
+    <p>Classic rich vanilla flavor</p>
+    <p>₹99</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+  <div class="item" data-product="Chocolate-IceCream" data-price="129">
+    <img src="https://www.coolinarco.com/wp-content/uploads/2025/04/Chocolate_Ice_Cream.jpg">
+    <h2>Chocolate</h2>
+    <p>Rich & creamy chocolate</p>
+    <p>₹129</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty(this,-1)">−</button>
+      <input class="qty" value="1" readonly>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <button class="btn" onclick="orderNow(this)">Order Now</button>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
